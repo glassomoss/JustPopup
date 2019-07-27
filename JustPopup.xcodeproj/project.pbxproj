@@ -7,13 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C1CB9FE22E8C07800DC649D /* JustPopupPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1CB9FD22E8C07800DC649D /* JustPopupPreferences.swift */; };
+		2CB52B2622E73D0C00CD0E19 /* PopupContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB52B2522E73D0C00CD0E19 /* PopupContainerViewController.swift */; };
 		2CF602BF22E3DB9D0041BBFE /* PopupController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CF602BD22E3DB9D0041BBFE /* PopupController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CF602C822E3DDE30041BBFE /* AnyPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF602C722E3DDE30041BBFE /* AnyPopupController.swift */; };
+		2CF602CA22E3DDFE0041BBFE /* PopupAnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF602C922E3DDFE0041BBFE /* PopupAnimationType.swift */; };
+		2CF602CC22E3DE1A0041BBFE /* PopupSwiftUIAnimatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF602CB22E3DE1A0041BBFE /* PopupSwiftUIAnimatedView.swift */; };
+		2CF602CE22E3DE750041BBFE /* PopupHostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF602CD22E3DE750041BBFE /* PopupHostingViewController.swift */; };
+		2CF602D022E3DEB50041BBFE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF602CF22E3DEB50041BBFE /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C1CB9FD22E8C07800DC649D /* JustPopupPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustPopupPreferences.swift; sourceTree = "<group>"; };
+		2CB52B2522E73D0C00CD0E19 /* PopupContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupContainerViewController.swift; sourceTree = "<group>"; };
 		2CF602BA22E3DB9D0041BBFE /* PopupController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopupController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CF602BD22E3DB9D0041BBFE /* PopupController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopupController.h; sourceTree = "<group>"; };
 		2CF602BE22E3DB9D0041BBFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CF602C722E3DDE30041BBFE /* AnyPopupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyPopupController.swift; sourceTree = "<group>"; };
+		2CF602C922E3DDFE0041BBFE /* PopupAnimationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupAnimationType.swift; sourceTree = "<group>"; };
+		2CF602CB22E3DE1A0041BBFE /* PopupSwiftUIAnimatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupSwiftUIAnimatedView.swift; sourceTree = "<group>"; };
+		2CF602CD22E3DE750041BBFE /* PopupHostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupHostingViewController.swift; sourceTree = "<group>"; };
+		2CF602CF22E3DEB50041BBFE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,7 +44,7 @@
 		2CF602B022E3DB9D0041BBFE = {
 			isa = PBXGroup;
 			children = (
-				2CF602BC22E3DB9D0041BBFE /* PopupController */,
+				2CF602BC22E3DB9D0041BBFE /* JustPopup */,
 				2CF602BB22E3DB9D0041BBFE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,13 +57,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2CF602BC22E3DB9D0041BBFE /* PopupController */ = {
+		2CF602BC22E3DB9D0041BBFE /* JustPopup */ = {
 			isa = PBXGroup;
 			children = (
 				2CF602BD22E3DB9D0041BBFE /* PopupController.h */,
+				2CF602CF22E3DEB50041BBFE /* Extensions.swift */,
+				2C1CB9FD22E8C07800DC649D /* JustPopupPreferences.swift */,
+				2CF602C722E3DDE30041BBFE /* AnyPopupController.swift */,
+				2CB52B2522E73D0C00CD0E19 /* PopupContainerViewController.swift */,
+				2CF602CD22E3DE750041BBFE /* PopupHostingViewController.swift */,
+				2CF602CB22E3DE1A0041BBFE /* PopupSwiftUIAnimatedView.swift */,
+				2CF602C922E3DDFE0041BBFE /* PopupAnimationType.swift */,
 				2CF602BE22E3DB9D0041BBFE /* Info.plist */,
 			);
-			path = PopupController;
+			path = JustPopup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,10 +116,11 @@
 				TargetAttributes = {
 					2CF602B922E3DB9D0041BBFE = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 					};
 				};
 			};
-			buildConfigurationList = 2CF602B422E3DB9D0041BBFE /* Build configuration list for PBXProject "PopupController" */;
+			buildConfigurationList = 2CF602B422E3DB9D0041BBFE /* Build configuration list for PBXProject "JustPopup" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -131,6 +153,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CF602D022E3DEB50041BBFE /* Extensions.swift in Sources */,
+				2CF602CE22E3DE750041BBFE /* PopupHostingViewController.swift in Sources */,
+				2C1CB9FE22E8C07800DC649D /* JustPopupPreferences.swift in Sources */,
+				2CF602CC22E3DE1A0041BBFE /* PopupSwiftUIAnimatedView.swift in Sources */,
+				2CF602C822E3DDE30041BBFE /* AnyPopupController.swift in Sources */,
+				2CF602CA22E3DDFE0041BBFE /* PopupAnimationType.swift in Sources */,
+				2CB52B2622E73D0C00CD0E19 /* PopupContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,22 +289,24 @@
 		2CF602C322E3DB9D0041BBFE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = BBJDU285ZR;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = PopupController/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/JustPopup/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = how.come.PopupController;
+				PRODUCT_BUNDLE_IDENTIFIER = how.come.JustPopup;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -284,20 +315,21 @@
 		2CF602C422E3DB9D0041BBFE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = BBJDU285ZR;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = PopupController/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/JustPopup/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = how.come.PopupController;
+				PRODUCT_BUNDLE_IDENTIFIER = how.come.JustPopup;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -308,7 +340,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2CF602B422E3DB9D0041BBFE /* Build configuration list for PBXProject "PopupController" */ = {
+		2CF602B422E3DB9D0041BBFE /* Build configuration list for PBXProject "JustPopup" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CF602C022E3DB9D0041BBFE /* Debug */,
