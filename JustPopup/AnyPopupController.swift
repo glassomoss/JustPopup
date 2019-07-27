@@ -82,6 +82,12 @@ public extension AnyPopupController {
             }
             NotificationCenter.default.post(name: .didViewAppearInPopup, object: true)
         })
+
+        if let duration = presentationDuration {
+            DispatchQueue.main.asyncAfter(deadline: .now() + duration, execute: {
+                self.hidePopup()
+            })
+        }
     }
     
     func hidePopup() {

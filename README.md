@@ -4,7 +4,7 @@ JustPopup is a lightweight library used to display custom popups
 
 Show animated popups made up from any views (either UIKIt and SwiftUI) or view controllers. 
 
-## Usage:
+## Usage
 
 ```swift
 

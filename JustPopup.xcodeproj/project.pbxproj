@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C1C757522ECB05A00D4282A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1C757422ECB05A00D4282A /* AppDelegate.swift */; };
+		2C1C757722ECB05A00D4282A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1C757622ECB05A00D4282A /* SceneDelegate.swift */; };
+		2C1C757922ECB05A00D4282A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1C757822ECB05A00D4282A /* ContentView.swift */; };
+		2C1C757B22ECB05F00D4282A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C1C757A22ECB05F00D4282A /* Assets.xcassets */; };
+		2C1C757E22ECB05F00D4282A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C1C757D22ECB05F00D4282A /* Preview Assets.xcassets */; };
+		2C1C758122ECB05F00D4282A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1C757F22ECB05F00D4282A /* LaunchScreen.storyboard */; };
+		2C1C758722ECB11500D4282A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1C758622ECB11500D4282A /* MainViewController.swift */; };
 		2C1CB9FE22E8C07800DC649D /* JustPopupPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1CB9FD22E8C07800DC649D /* JustPopupPreferences.swift */; };
 		2CB52B2622E73D0C00CD0E19 /* PopupContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB52B2522E73D0C00CD0E19 /* PopupContainerViewController.swift */; };
 		2CF602BF22E3DB9D0041BBFE /* PopupController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CF602BD22E3DB9D0041BBFE /* PopupController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -18,6 +25,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C1C757222ECB05A00D4282A /* JustPopupExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustPopupExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C1C757422ECB05A00D4282A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2C1C757622ECB05A00D4282A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2C1C757822ECB05A00D4282A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2C1C757A22ECB05F00D4282A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2C1C757D22ECB05F00D4282A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2C1C758022ECB05F00D4282A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2C1C758222ECB05F00D4282A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C1C758622ECB11500D4282A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2C1CB9FD22E8C07800DC649D /* JustPopupPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustPopupPreferences.swift; sourceTree = "<group>"; };
 		2CB52B2522E73D0C00CD0E19 /* PopupContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupContainerViewController.swift; sourceTree = "<group>"; };
 		2CF602BA22E3DB9D0041BBFE /* PopupController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopupController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -31,6 +47,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2C1C756F22ECB05A00D4282A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2CF602B722E3DB9D0041BBFE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -41,10 +64,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C1C757322ECB05A00D4282A /* JustPopupExamples */ = {
+			isa = PBXGroup;
+			children = (
+				2C1C757422ECB05A00D4282A /* AppDelegate.swift */,
+				2C1C757622ECB05A00D4282A /* SceneDelegate.swift */,
+				2C1C758622ECB11500D4282A /* MainViewController.swift */,
+				2C1C757822ECB05A00D4282A /* ContentView.swift */,
+				2C1C757A22ECB05F00D4282A /* Assets.xcassets */,
+				2C1C757F22ECB05F00D4282A /* LaunchScreen.storyboard */,
+				2C1C758222ECB05F00D4282A /* Info.plist */,
+				2C1C757C22ECB05F00D4282A /* Preview Content */,
+			);
+			path = JustPopupExamples;
+			sourceTree = "<group>";
+		};
+		2C1C757C22ECB05F00D4282A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2C1C757D22ECB05F00D4282A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		2CF602B022E3DB9D0041BBFE = {
 			isa = PBXGroup;
 			children = (
 				2CF602BC22E3DB9D0041BBFE /* JustPopup */,
+				2C1C757322ECB05A00D4282A /* JustPopupExamples */,
 				2CF602BB22E3DB9D0041BBFE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				2CF602BA22E3DB9D0041BBFE /* PopupController.framework */,
+				2C1C757222ECB05A00D4282A /* JustPopupExamples.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,6 +135,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		2C1C757122ECB05A00D4282A /* JustPopupExamples */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C1C758522ECB05F00D4282A /* Build configuration list for PBXNativeTarget "JustPopupExamples" */;
+			buildPhases = (
+				2C1C756E22ECB05A00D4282A /* Sources */,
+				2C1C756F22ECB05A00D4282A /* Frameworks */,
+				2C1C757022ECB05A00D4282A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JustPopupExamples;
+			productName = JustPopupExamples;
+			productReference = 2C1C757222ECB05A00D4282A /* JustPopupExamples.app */;
+			productType = "com.apple.product-type.application";
+		};
 		2CF602B922E3DB9D0041BBFE /* PopupController */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CF602C222E3DB9D0041BBFE /* Build configuration list for PBXNativeTarget "PopupController" */;
@@ -111,9 +176,13 @@
 		2CF602B122E3DB9D0041BBFE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = Eubicor;
 				TargetAttributes = {
+					2C1C757122ECB05A00D4282A = {
+						CreatedOnToolsVersion = 11.0;
+					};
 					2CF602B922E3DB9D0041BBFE = {
 						CreatedOnToolsVersion = 11.0;
 						LastSwiftMigration = 1100;
@@ -134,11 +203,22 @@
 			projectRoot = "";
 			targets = (
 				2CF602B922E3DB9D0041BBFE /* PopupController */,
+				2C1C757122ECB05A00D4282A /* JustPopupExamples */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2C1C757022ECB05A00D4282A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C1C758122ECB05F00D4282A /* LaunchScreen.storyboard in Resources */,
+				2C1C757E22ECB05F00D4282A /* Preview Assets.xcassets in Resources */,
+				2C1C757B22ECB05F00D4282A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2CF602B822E3DB9D0041BBFE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -149,6 +229,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2C1C756E22ECB05A00D4282A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C1C757522ECB05A00D4282A /* AppDelegate.swift in Sources */,
+				2C1C757722ECB05A00D4282A /* SceneDelegate.swift in Sources */,
+				2C1C757922ECB05A00D4282A /* ContentView.swift in Sources */,
+				2C1C758722ECB11500D4282A /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2CF602B622E3DB9D0041BBFE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -165,7 +256,56 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		2C1C757F22ECB05F00D4282A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2C1C758022ECB05F00D4282A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		2C1C758322ECB05F00D4282A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "JustPopupExamples/Preview\\ Content";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = JustPopupExamples/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = how.come.JustPopupExamples;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2C1C758422ECB05F00D4282A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "JustPopupExamples/Preview\\ Content";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = JustPopupExamples/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = how.come.JustPopupExamples;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		2CF602C022E3DB9D0041BBFE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -340,6 +480,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2C1C758522ECB05F00D4282A /* Build configuration list for PBXNativeTarget "JustPopupExamples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C1C758322ECB05F00D4282A /* Debug */,
+				2C1C758422ECB05F00D4282A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2CF602B422E3DB9D0041BBFE /* Build configuration list for PBXProject "JustPopup" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

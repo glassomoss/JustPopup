@@ -9,9 +9,10 @@ Pod::Spec.new do |spec|
   spec.author       = { "Mefodiy" => "akatpod2@mail.ru" }
   spec.platform     = :ios, "13.0"
 
-  spec.source       = { :git => "https://github.com/glassomoss/JustPopup.git", :tag => spec.version.to_s }
+  spec.source       = { :git => "https://github.com/glassomoss/JustPopup.git", :tag => spec.version }
 
-  spec.source_files = "JustPopup/Classes/**/*"
+#  spec.source_files = "JustPopup/Classes/**/*"
+  spec.source_files  = 'JustPopup/*.{h,m}'
 
 
 end
