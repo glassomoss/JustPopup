@@ -16,7 +16,7 @@
 		2C1C758722ECB11500D4282A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1C758622ECB11500D4282A /* MainViewController.swift */; };
 		2C1CB9FE22E8C07800DC649D /* JustPopupPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1CB9FD22E8C07800DC649D /* JustPopupPreferences.swift */; };
 		2CB52B2622E73D0C00CD0E19 /* PopupContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB52B2522E73D0C00CD0E19 /* PopupContainerViewController.swift */; };
-		2CF602BF22E3DB9D0041BBFE /* PopupController.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CF602BD22E3DB9D0041BBFE /* PopupController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CF602BF22E3DB9D0041BBFE /* JustPopup.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CF602BD22E3DB9D0041BBFE /* JustPopup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2CF602C822E3DDE30041BBFE /* AnyPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF602C722E3DDE30041BBFE /* AnyPopupController.swift */; };
 		2CF602CA22E3DDFE0041BBFE /* PopupAnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF602C922E3DDFE0041BBFE /* PopupAnimationType.swift */; };
 		2CF602CC22E3DE1A0041BBFE /* PopupSwiftUIAnimatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF602CB22E3DE1A0041BBFE /* PopupSwiftUIAnimatedView.swift */; };
@@ -36,8 +36,8 @@
 		2C1C758622ECB11500D4282A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2C1CB9FD22E8C07800DC649D /* JustPopupPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustPopupPreferences.swift; sourceTree = "<group>"; };
 		2CB52B2522E73D0C00CD0E19 /* PopupContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupContainerViewController.swift; sourceTree = "<group>"; };
-		2CF602BA22E3DB9D0041BBFE /* PopupController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopupController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2CF602BD22E3DB9D0041BBFE /* PopupController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopupController.h; sourceTree = "<group>"; };
+		2CF602BA22E3DB9D0041BBFE /* JustPopup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JustPopup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CF602BD22E3DB9D0041BBFE /* JustPopup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JustPopup.h; sourceTree = "<group>"; };
 		2CF602BE22E3DB9D0041BBFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CF602C722E3DDE30041BBFE /* AnyPopupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyPopupController.swift; sourceTree = "<group>"; };
 		2CF602C922E3DDFE0041BBFE /* PopupAnimationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupAnimationType.swift; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		2CF602BB22E3DB9D0041BBFE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2CF602BA22E3DB9D0041BBFE /* PopupController.framework */,
+				2CF602BA22E3DB9D0041BBFE /* JustPopup.framework */,
 				2C1C757222ECB05A00D4282A /* JustPopupExamples.app */,
 			);
 			name = Products;
@@ -108,7 +108,7 @@
 		2CF602BC22E3DB9D0041BBFE /* JustPopup */ = {
 			isa = PBXGroup;
 			children = (
-				2CF602BD22E3DB9D0041BBFE /* PopupController.h */,
+				2CF602BD22E3DB9D0041BBFE /* JustPopup.h */,
 				2CF602CF22E3DEB50041BBFE /* Extensions.swift */,
 				2C1CB9FD22E8C07800DC649D /* JustPopupPreferences.swift */,
 				2CF602C722E3DDE30041BBFE /* AnyPopupController.swift */,
@@ -128,7 +128,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CF602BF22E3DB9D0041BBFE /* PopupController.h in Headers */,
+				2CF602BF22E3DB9D0041BBFE /* JustPopup.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,7 +167,7 @@
 			);
 			name = PopupController;
 			productName = PopupController;
-			productReference = 2CF602BA22E3DB9D0041BBFE /* PopupController.framework */;
+			productReference = 2CF602BA22E3DB9D0041BBFE /* JustPopup.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -444,8 +444,10 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = how.come.JustPopup;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_MODULE_NAME = JustPopup;
+				PRODUCT_NAME = JustPopup;
 				SKIP_INSTALL = YES;
+				SWIFT_MODULE_NAME = JustPopup;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -470,8 +472,10 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = how.come.JustPopup;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_MODULE_NAME = JustPopup;
+				PRODUCT_NAME = JustPopup;
 				SKIP_INSTALL = YES;
+				SWIFT_MODULE_NAME = JustPopup;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

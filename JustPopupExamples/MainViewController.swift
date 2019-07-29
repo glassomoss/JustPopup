@@ -1,13 +1,14 @@
 //
 //  MainViewController.swift
-//  PopupControllerShowcase
+//  JustPopupShowcase
 //
 //  Created by Валерий Акатов on 21.07.2019.
 //  Copyright © 2019 Eubicor. All rights reserved.
 //
 
 import UIKit
-import PopupController
+import JustPopup
+import Combine
 
 class MainViewController: UIViewController {
 
@@ -37,22 +38,34 @@ class MainViewController: UIViewController {
         ])
     }
     
+    typealias Popup = PopupHostingViewController
     var popup: AnyPopupController?
     
     @objc private func showPopup() {
         guard let window = view.window else { return }
-//        let swiftView = ContentView()
-//        popup = PopupHostingViewController(rootView: swiftView, fromWindow: window)
-//            .withCornerRadius(20)
-        let simpleView = UIView(frame: CGRect(x: 0, y: 0, width: 1000, height: 1000))
-        simpleView.backgroundColor = .systemOrange
-        let controller = UIViewController()
-        controller.view = simpleView
-        popup = PopupContainerViewController(popupController: controller, fromWindow: window)
-        popup?.showPopup()
+
+        if Bool.random() {
+            let swiftView = ContentView()
+            popup = PopupHostingViewController(rootView: swiftView,
+                                               fromWindow: window)
+                .withPresentationDuration(2)
+                .withCornerRadius(20)
+        } else {
+            let simpleView = UIView(frame: CGRect(x: 0, y: 0, width: 1000, height: 1000))
+            simpleView.backgroundColor = .systemOrange
+            let controller = UIViewController()
+            controller.view = simpleView
+            popup = PopupContainerViewController(popupController: controller, fromWindow: window)
+        }
+
+        let publisher = PassthroughSubject<Void, Never>()
+
+        popup?
+            .subscribeToClosingPublisher(publisher.eraseToAnyPublisher())
+            .showPopup()
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-            self.popup?.hidePopup()
-            self.popup = nil
+            publisher.send(())
         })
     }
 

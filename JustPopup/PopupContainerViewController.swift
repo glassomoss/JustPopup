@@ -1,6 +1,6 @@
 //
 //  PopupViewController.swift
-//  PopupController
+//  JustPopup
 //
 //  Created by Валерий Акатов on 23.07.2019.
 //  Copyright © 2019 Eubicor. All rights reserved.
@@ -15,9 +15,15 @@ public class PopupContainerViewController: UIViewController, AnyPopupController 
     public var popupController: UIViewController!
     public var animationDuration: TimeInterval = 0.3
     public var presentationDuration: TimeInterval?
-    public var cornerRadius: CGFloat = 20
+    public var cornerRadius: CGFloat = 20 {
+        didSet {
+            popupController.view.layer.cornerRadius = cornerRadius
+        }
+    }
     public var presentationStyle: PopupAnimationType = .fromBottom
     public var dismissionStyle: PopupAnimationType = .crossDisolve
+    public var fadesBackground: Bool = true
+    public var dismissOnTap: Bool = false
 
     public init(popupView: UIView, fromWindow: UIWindow) {
         self.normalWindow = fromWindow
@@ -59,6 +65,13 @@ public class PopupContainerViewController: UIViewController, AnyPopupController 
         let size = UIScreen.main.bounds.size
         popupController.view.bounds.size = CGSize(width: size.width - 40, height: size.height - 60)
         popupController.view.center = CGPoint(x: size.width / 2, y: size.height / 2)
+    }
+
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        if dismissOnTap {
+            hidePopup()
+        }
     }
 
 }

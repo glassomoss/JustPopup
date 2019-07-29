@@ -1,5 +1,5 @@
 //
-//  PopupController.swift
+//  JustPopup.swift
 //  G5
 //
 //  Created by Валерий Акатов on 18.07.2019.
@@ -14,21 +14,74 @@ public protocol AnyPopupController: class {
     var normalWindow: UIWindow { get set }
     var popupWindow: UIWindow? { get set }
     var popupController: UIViewController! { get set }
+
+    // MARK: - Customization variables
+
     var animationDuration: TimeInterval { get set }
     var presentationDuration: TimeInterval? { get set }
     var cornerRadius: CGFloat { get set }
     var presentationStyle: PopupAnimationType { get set }
     var dismissionStyle: PopupAnimationType { get set }
+    var dismissOnTap: Bool { get set }
+    var fadesBackground: Bool { get set }
 
+    
+    // MARK: - Showing
+    
+    /// Just shows the popup and that's it
     func showPopup()
-    func hidePopup()
+    
+    /**
+        Use this method to make popup hidden after some time
+     
+        You may use it like this:
+            
+            popup
+                .withPresentationDuration(3)
+                .showPopup()
+     
+        - parameter duration:
+        Duration of showing the popup before it closes
+        
+        - warning:
+        Be sure not to use .now() in duration as it's
+        already used in implementation
+     */
+    func withPresentationDuration(_ duration: TimeInterval?) -> Self
+    
+    /**
+        Utility method that explicitly sets the background faded
+     
+        Theoretically might be used when writing custom popup,
+        but I doubt if there is any sense in doing it
+    */
     func setBackgroundFaded(_ faded: Bool)
 
+
+    // MARK: - Hiding
+    
+    /// Just hides the popup and that's it
+    func hidePopup()
+    
+    /**
+        Use this method to make popup close after given publisher emits
+       
+        Note that it closes popup when the publisher emits any value
+        and after that subscription automatically terminates.
+
+        - parameter publisher:
+            Some publisher with Any output type and Never failure type
+    */
+    func subscribeToClosingPublisher<T>(_ publisher: AnyPublisher<T, Never>) -> Self
+
+    // MARK: - Customization
+
     func withAnimationDuration(_ duration: TimeInterval) -> Self
-    func withPresentationDuration(_ duration: TimeInterval?) -> Self
     func withCornerRadius(_ radius: CGFloat) -> Self
     func withPresentationStyle(_ style: PopupAnimationType) -> Self
     func withDissmissionStyle(_ style: PopupAnimationType) -> Self
+    func dissmissOnTap(_ bool: Bool) -> Self
+    func fadesBackground(_ bool: Bool) -> Self
 
 }
 
@@ -46,9 +99,7 @@ public extension AnyPopupController {
         popupWindow?.frame = UIScreen.main.bounds
         popupWindow?.backgroundColor = .clear
         popupWindow?.windowLevel = UIWindow.Level.statusBar + 1
-        if let self = self as? UIViewController {
-            popupWindow?.rootViewController = self
-        }
+        popupWindow?.rootViewController = self as? UIViewController
         popupWindow?.makeKeyAndVisible()
     }
     
@@ -60,7 +111,9 @@ public extension AnyPopupController {
 
     func showPopup() {
         makeSelfKeyWindow()
-        setBackgroundFaded(true)
+        if fadesBackground  {
+            setBackgroundFaded(true)
+        }
         let popupView = popupController.view
         popupView?.alpha = 0
         
@@ -133,6 +186,26 @@ public extension AnyPopupController {
         cornerRadius = radius
         return self
     }
+    
+    func dissmissOnTap(_ bool: Bool = true) -> Self {
+        dismissOnTap = bool
+        return self
+    }
+
+    func fadesBackground(_ bool: Bool) -> Self {
+        fadesBackground = bool
+        return self
+    }
+    
+    func subscribeToClosingPublisher<T>(_ publisher: AnyPublisher<T, Never>) -> Self {
+        let subscriber = Subscribers.SinkFirstAndCancel<T> { [weak self] _ in
+            self?.hidePopup()
+        }
+        publisher
+            .receive(on: RunLoop.main)
+            .subscribe(subscriber)
+        return self
+    }
 
 }
 
@@ -146,4 +219,3 @@ public extension AnyPopupController where Self: UIViewController {
     }
 
 }
-
