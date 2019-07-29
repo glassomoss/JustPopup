@@ -86,16 +86,9 @@ public protocol AnyPopupController: class {
 }
 
 public extension AnyPopupController {
-    
+
     func makeSelfKeyWindow() {
-        if JustPopupPreferences.shared.shouldFollowScenePattern {
-            let windowScene = UIApplication.shared.connectedScenes.first
-            if let windowScene = windowScene as? UIWindowScene {
-                popupWindow = UIWindow(windowScene: windowScene)
-            }
-        } else {
-            popupWindow = UIWindow()
-        }
+        popupWindow = rightWindow()
         popupWindow?.frame = UIScreen.main.bounds
         popupWindow?.backgroundColor = .clear
         popupWindow?.windowLevel = UIWindow.Level.statusBar + 1
@@ -103,6 +96,19 @@ public extension AnyPopupController {
         popupWindow?.makeKeyAndVisible()
     }
     
+    func rightWindow() -> UIWindow {
+        if JustPopupPreferences.shared.shouldFollowScenePattern {
+            let windowScene = UIApplication.shared
+                .connectedScenes
+                .filter { $0.activationState == .foregroundActive }
+                .first
+            if let windowScene = windowScene as? UIWindowScene {
+                return UIWindow(windowScene: windowScene)
+            }
+        }
+        return UIWindow()
+    }
+
     func resignFromKeyWindow() {
         popupWindow?.rootViewController = nil
         popupWindow = nil

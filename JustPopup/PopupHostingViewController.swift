@@ -25,8 +25,8 @@ public class PopupHostingViewController<Content: View>: UIViewController, AnyPop
     public var fadesBackground: Bool = true
     public var dismissOnTap: Bool = false
 
-    public init(rootView: Content, fromWindow: UIWindow) {
-        self.normalWindow = fromWindow
+    public init(rootView: Content, fromWindow: UIWindow? = nil) {
+        self.normalWindow = fromWindow ?? UIApplication.topWindow()
         super.init(nibName: nil, bundle: nil)
         configureHostingController(from: rootView)
         popupController.view.layer.cornerRadius = cornerRadius

@@ -25,16 +25,16 @@ public class PopupContainerViewController: UIViewController, AnyPopupController 
     public var fadesBackground: Bool = true
     public var dismissOnTap: Bool = false
 
-    public init(popupView: UIView, fromWindow: UIWindow) {
-        self.normalWindow = fromWindow
+    public init(popupView: UIView, fromWindow: UIWindow? = nil) {
+        self.normalWindow = fromWindow ?? UIApplication.topWindow()
         super.init(nibName: nil, bundle: nil)
         setupPopupController(from: popupView)
         popupController.view.layer.cornerRadius = cornerRadius
         view.addSubview(popupController.view)
     }
 
-    public init(popupController: UIViewController, fromWindow: UIWindow) {
-        self.normalWindow = fromWindow
+    public init(popupController: UIViewController, fromWindow: UIWindow? = nil) {
+        self.normalWindow = fromWindow ?? UIApplication.topWindow()
         super.init(nibName: nil, bundle: nil)
         setupPopupController(from: popupController)
         popupController.view.layer.cornerRadius = cornerRadius

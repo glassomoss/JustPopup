@@ -42,20 +42,17 @@ class MainViewController: UIViewController {
     var popup: AnyPopupController?
     
     @objc private func showPopup() {
-        guard let window = view.window else { return }
 
         if Bool.random() {
             let swiftView = ContentView()
-            popup = PopupHostingViewController(rootView: swiftView,
-                                               fromWindow: window)
-                .withPresentationDuration(2)
+            popup = PopupHostingViewController(rootView: swiftView)
                 .withCornerRadius(20)
         } else {
             let simpleView = UIView(frame: CGRect(x: 0, y: 0, width: 1000, height: 1000))
             simpleView.backgroundColor = .systemOrange
             let controller = UIViewController()
             controller.view = simpleView
-            popup = PopupContainerViewController(popupController: controller, fromWindow: window)
+            popup = PopupContainerViewController(popupController: controller)
         }
 
         let publisher = PassthroughSubject<Void, Never>()

@@ -9,14 +9,12 @@ Show animated popups made up from any views (either UIKit and SwiftUI) or view c
 ```swift
 typealias Popup = PopupHostingViewController
 
-let popup = Popup(rootView: SwiftUIView(), fromWindow: currentWindow)
+let popup = Popup(rootView: SwiftUIView())
     .withCornerRadius(20)
     .withPresentationStyle(.crossDisolve)
 
 popup.show()
 ```
-
-Please, note that you must pass a window so popup can return back to it after dismission.
 
 ## Dismission 🖕
 
@@ -44,14 +42,12 @@ popup
     .showPopup()
 ```
 
-4. Also it is possible to make it disappeared in concrete time after showing"
-
+4. Also it is possible to make it disappeared in concrete time after showing
 
 ```swift
 typealias Popup = PopupHostingViewController
 
-let popup = Popup(rootView: SwiftUIView(), 
-                  fromWindow: currentWindow)
+let popup = Popup(rootView: SwiftUIView()) 
             .withPresentationDuration(2)
 
 // four years later
@@ -98,10 +94,19 @@ JustPopup will fire a notification when all presentation animations are finished
 
 ### Windows and Scenes
 
-Scenes are the new pattern introduced in iOS 13 and if you're using them you should tell JustPopup somewhere early:
+Scenes are the new pattern introduced in iOS 13 and if you're using them you should tell about this JustPopup somewhere early:
 
 ```swift
 JustPopupPreferences.shared.shouldFollowScenePattern = true
+```
+
+#### More on windows
+
+JustPopup assumes that you're using top window so If you have complex windows scheme you may pass needed window in popup initializer:
+
+```swift
+typealias Popup = PopupHostingViewController
+let popup = Popup(rootView: someView, fromWindow: someWindow)
 ```
 
 ## Installation 🔧
