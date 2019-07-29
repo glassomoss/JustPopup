@@ -24,7 +24,7 @@ Please, note that you must pass a window so popup can return back to it after di
 
 JustPopup currently provides four possibilities to hide a popup: 
 
-### 1. To dismiss a popup you may simply call  `.hide()` :
+1. To dismiss a popup you may simply call  `.hide()` :
 
 ```swift
 
@@ -32,7 +32,7 @@ popup.hide()
 
 ```
 
-### 2.  Alternatively, you may subscribe to some publisher, so when it emits anything popup will close:
+2.  Alternatively, you may subscribe to some publisher, so when it emits anything popup will close:
 
 ```swift
 
@@ -42,7 +42,7 @@ popup
 
 ```
 
-### 3. Or you can make it dismissed with just a tap on it:
+3. Or you can make it dismissed with just a tap on it:
 
 ```swift
 
@@ -52,7 +52,7 @@ popup
 
 ```
 
-### 4. Also it is possible to make it disappeared in concrete time after showing"
+4. Also it is possible to make it disappeared in concrete time after showing"
 
 
 ```swift
