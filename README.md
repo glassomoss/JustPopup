@@ -7,13 +7,28 @@ Show animated popups made up from any views (either UIKit and SwiftUI) or view c
 ## Usage 🌈
 
 ```swift
-typealias Popup = PopupHostingViewController
-
-let popup = Popup(rootView: SwiftUIView())
+let popup = Popup(SwiftUIView())
     .withCornerRadius(20)
     .withPresentationStyle(.crossDisolve)
 
 popup.show()
+```
+
+## Building 🗿
+
+```swift
+
+var popup: Popup
+
+// from SwiftUI view 
+popup = Popup(SwiftUIView()) 
+            .withPresentationDuration(2)
+
+// from UIView
+popup = Popup(someUIView)
+
+// from controller
+popup = Popup(ExistingPopupController())
 ```
 
 ## Dismission 🖕
@@ -45,10 +60,8 @@ popup
 4. Also it is possible to make it disappeared in concrete time after showing
 
 ```swift
-typealias Popup = PopupHostingViewController
-
-let popup = Popup(rootView: SwiftUIView()) 
-            .withPresentationDuration(2)
+let popup = Popup(SwiftUIView()) 
+    .withPresentationDuration(2)
 
 // four years later
 
@@ -57,14 +70,31 @@ popup.show()
 // it'll be dismissed in 2 seconds after showing
 ```
 
+Additionally, why not combining them?
+
+```swift
+
+let popup = Popup(SomeView())
+    .dismissOnTap()
+    .withPresentationDuration(2)
+
+popup.show()
+
+// it'll be dismissed in 2 seconds or sooner if user taps it 
+```
+
 ## Customization 🎶
 
 Popups are very easy to customize as you can use cool functional-style syntax:
 
 ```swift
 
-// lots of code
-
+popup
+    .withAnimationDuration(2)
+    .withPresentationStyle(.fromBottom)
+    .withDismissionStyle(.fromUp)
+    .withCornerRadius(5)
+    .fadesBackground(false)
 ```
 
 ## Integration 🤝
@@ -105,8 +135,7 @@ JustPopupPreferences.shared.shouldFollowScenePattern = true
 JustPopup assumes that you're using top window so If you have complex windows scheme you may pass needed window in popup initializer:
 
 ```swift
-typealias Popup = PopupHostingViewController
-let popup = Popup(rootView: someView, fromWindow: someWindow)
+let popup = Popup(someView, fromWindow: someWindow)
 ```
 
 ## Installation 🔧

@@ -79,8 +79,8 @@ public protocol AnyPopupController: class {
     func withAnimationDuration(_ duration: TimeInterval) -> Self
     func withCornerRadius(_ radius: CGFloat) -> Self
     func withPresentationStyle(_ style: PopupAnimationType) -> Self
-    func withDissmissionStyle(_ style: PopupAnimationType) -> Self
-    func dissmissOnTap(_ bool: Bool) -> Self
+    func withDismissionStyle(_ style: PopupAnimationType) -> Self
+    func dismissOnTap(_ bool: Bool) -> Self
     func fadesBackground(_ bool: Bool) -> Self
 
 }
@@ -183,7 +183,7 @@ public extension AnyPopupController {
         return self
     }
     
-    func withDissmissionStyle(_ style: PopupAnimationType) -> Self {
+    func withDismissionStyle(_ style: PopupAnimationType) -> Self {
         dismissionStyle = style
         return self
     }
@@ -193,7 +193,7 @@ public extension AnyPopupController {
         return self
     }
     
-    func dissmissOnTap(_ bool: Bool = true) -> Self {
+    func dismissOnTap(_ bool: Bool = true) -> Self {
         dismissOnTap = bool
         return self
     }

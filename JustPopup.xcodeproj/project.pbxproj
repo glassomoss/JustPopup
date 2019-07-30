@@ -15,12 +15,11 @@
 		2C1C758122ECB05F00D4282A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1C757F22ECB05F00D4282A /* LaunchScreen.storyboard */; };
 		2C1C758722ECB11500D4282A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1C758622ECB11500D4282A /* MainViewController.swift */; };
 		2C1CB9FE22E8C07800DC649D /* JustPopupPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1CB9FD22E8C07800DC649D /* JustPopupPreferences.swift */; };
-		2CB52B2622E73D0C00CD0E19 /* PopupContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB52B2522E73D0C00CD0E19 /* PopupContainerViewController.swift */; };
+		2CB52B2622E73D0C00CD0E19 /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB52B2522E73D0C00CD0E19 /* Popup.swift */; };
 		2CF602BF22E3DB9D0041BBFE /* JustPopup.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CF602BD22E3DB9D0041BBFE /* JustPopup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2CF602C822E3DDE30041BBFE /* AnyPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF602C722E3DDE30041BBFE /* AnyPopupController.swift */; };
 		2CF602CA22E3DDFE0041BBFE /* PopupAnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF602C922E3DDFE0041BBFE /* PopupAnimationType.swift */; };
 		2CF602CC22E3DE1A0041BBFE /* PopupSwiftUIAnimatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF602CB22E3DE1A0041BBFE /* PopupSwiftUIAnimatedView.swift */; };
-		2CF602CE22E3DE750041BBFE /* PopupHostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF602CD22E3DE750041BBFE /* PopupHostingViewController.swift */; };
 		2CF602D022E3DEB50041BBFE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF602CF22E3DEB50041BBFE /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,14 +34,13 @@
 		2C1C758222ECB05F00D4282A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C1C758622ECB11500D4282A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2C1CB9FD22E8C07800DC649D /* JustPopupPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustPopupPreferences.swift; sourceTree = "<group>"; };
-		2CB52B2522E73D0C00CD0E19 /* PopupContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupContainerViewController.swift; sourceTree = "<group>"; };
+		2CB52B2522E73D0C00CD0E19 /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
 		2CF602BA22E3DB9D0041BBFE /* JustPopup.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JustPopup.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CF602BD22E3DB9D0041BBFE /* JustPopup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JustPopup.h; sourceTree = "<group>"; };
 		2CF602BE22E3DB9D0041BBFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CF602C722E3DDE30041BBFE /* AnyPopupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyPopupController.swift; sourceTree = "<group>"; };
 		2CF602C922E3DDFE0041BBFE /* PopupAnimationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupAnimationType.swift; sourceTree = "<group>"; };
 		2CF602CB22E3DE1A0041BBFE /* PopupSwiftUIAnimatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupSwiftUIAnimatedView.swift; sourceTree = "<group>"; };
-		2CF602CD22E3DE750041BBFE /* PopupHostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupHostingViewController.swift; sourceTree = "<group>"; };
 		2CF602CF22E3DEB50041BBFE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,8 +110,7 @@
 				2CF602CF22E3DEB50041BBFE /* Extensions.swift */,
 				2C1CB9FD22E8C07800DC649D /* JustPopupPreferences.swift */,
 				2CF602C722E3DDE30041BBFE /* AnyPopupController.swift */,
-				2CB52B2522E73D0C00CD0E19 /* PopupContainerViewController.swift */,
-				2CF602CD22E3DE750041BBFE /* PopupHostingViewController.swift */,
+				2CB52B2522E73D0C00CD0E19 /* Popup.swift */,
 				2CF602CB22E3DE1A0041BBFE /* PopupSwiftUIAnimatedView.swift */,
 				2CF602C922E3DDFE0041BBFE /* PopupAnimationType.swift */,
 				2CF602BE22E3DB9D0041BBFE /* Info.plist */,
@@ -245,12 +242,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CF602D022E3DEB50041BBFE /* Extensions.swift in Sources */,
-				2CF602CE22E3DE750041BBFE /* PopupHostingViewController.swift in Sources */,
 				2C1CB9FE22E8C07800DC649D /* JustPopupPreferences.swift in Sources */,
 				2CF602CC22E3DE1A0041BBFE /* PopupSwiftUIAnimatedView.swift in Sources */,
 				2CF602C822E3DDE30041BBFE /* AnyPopupController.swift in Sources */,
 				2CF602CA22E3DDFE0041BBFE /* PopupAnimationType.swift in Sources */,
-				2CB52B2622E73D0C00CD0E19 /* PopupContainerViewController.swift in Sources */,
+				2CB52B2622E73D0C00CD0E19 /* Popup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SwiftUI
 
-public class PopupContainerViewController: UIViewController, AnyPopupController {
+public class Popup: UIViewController, AnyPopupController {
 
     public var normalWindow: UIWindow
     public var popupWindow: UIWindow?
@@ -25,20 +26,22 @@ public class PopupContainerViewController: UIViewController, AnyPopupController 
     public var fadesBackground: Bool = true
     public var dismissOnTap: Bool = false
 
-    public init(popupView: UIView, fromWindow: UIWindow? = nil) {
+    public init(_ view: UIView, fromWindow: UIWindow? = nil) {
         self.normalWindow = fromWindow ?? UIApplication.topWindow()
         super.init(nibName: nil, bundle: nil)
-        setupPopupController(from: popupView)
-        popupController.view.layer.cornerRadius = cornerRadius
-        view.addSubview(popupController.view)
+        popupController = PopupViewController(popupView: view)
+        setupPopupController()
     }
 
-    public init(popupController: UIViewController, fromWindow: UIWindow? = nil) {
+    public init(_ popupController: UIViewController, fromWindow: UIWindow? = nil) {
         self.normalWindow = fromWindow ?? UIApplication.topWindow()
+        self.popupController = popupController
         super.init(nibName: nil, bundle: nil)
-        setupPopupController(from: popupController)
-        popupController.view.layer.cornerRadius = cornerRadius
-        view.addSubview(popupController.view)
+        setupPopupController()
+    }
+
+    public convenience init<T: View>(_ view: T, fromWindow: UIWindow? = nil) {
+        self.init(UIHostingController(rootView: view), fromWindow: fromWindow)
     }
 
     required init?(coder: NSCoder) {
@@ -51,20 +54,13 @@ public class PopupContainerViewController: UIViewController, AnyPopupController 
         view.backgroundColor = .clear
     }
 
-    private func setupPopupController(from view: UIView) {
-        popupController = PopupViewController(popupView: view)
+    private func setupPopupController() {
         addChild(popupController)
         let size = UIScreen.main.bounds.size
         popupController.view.bounds.size = CGSize(width: size.width - 40, height: size.height - 60)
         popupController.view.center = CGPoint(x: size.width / 2, y: size.height / 2)
-    }
-
-    private func setupPopupController(from controller: UIViewController) {
-        popupController = controller
-        addChild(popupController)
-        let size = UIScreen.main.bounds.size
-        popupController.view.bounds.size = CGSize(width: size.width - 40, height: size.height - 60)
-        popupController.view.center = CGPoint(x: size.width / 2, y: size.height / 2)
+        popupController.view.layer.cornerRadius = cornerRadius
+        view.addSubview(popupController.view)
     }
 
     public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -38,42 +38,34 @@ class MainViewController: UIViewController {
         ])
     }
     
-    typealias Popup = PopupHostingViewController
     var popup: AnyPopupController?
     
     @objc private func showPopup() {
 
         if Bool.random() {
             let swiftView = ContentView()
-            popup = PopupHostingViewController(rootView: swiftView)
-                .withCornerRadius(20)
+            popup = Popup(swiftView)
         } else {
             let simpleView = UIView(frame: CGRect(x: 0, y: 0, width: 1000, height: 1000))
             simpleView.backgroundColor = .systemOrange
-            let controller = UIViewController()
-            controller.view = simpleView
-            popup = PopupContainerViewController(popupController: controller)
+            popup = Popup(simpleView)
         }
 
         let publisher = PassthroughSubject<Void, Never>()
 
         popup?
+            .withAnimationDuration(2)
+            .withPresentationStyle(.fromBottom)
+            .withDismissionStyle(.fromUp)
+            .withCornerRadius(5)
+            .fadesBackground(false)
+            .dismissOnTap()
             .subscribeToClosingPublisher(publisher.eraseToAnyPublisher())
             .showPopup()
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
             publisher.send(())
         })
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
