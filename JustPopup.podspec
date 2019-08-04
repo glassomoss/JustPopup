@@ -11,8 +11,7 @@ Pod::Spec.new do |spec|
 
   spec.source       = { :git => "https://github.com/glassomoss/JustPopup.git", :tag => spec.version }
 
-#  spec.source_files = "JustPopup/Classes/**/*"
-  spec.source_files  = 'JustPopup/*.{h,m}'
+  spec.source_files  = 'JustPopup/*.swift'
 
 
 end
