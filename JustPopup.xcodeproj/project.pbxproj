@@ -149,9 +149,9 @@
 			productReference = 2C1C757222ECB05A00D4282A /* JustPopupExamples.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2CF602B922E3DB9D0041BBFE /* PopupController */ = {
+		2CF602B922E3DB9D0041BBFE /* JustPopup */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2CF602C222E3DB9D0041BBFE /* Build configuration list for PBXNativeTarget "PopupController" */;
+			buildConfigurationList = 2CF602C222E3DB9D0041BBFE /* Build configuration list for PBXNativeTarget "JustPopup" */;
 			buildPhases = (
 				2CF602B522E3DB9D0041BBFE /* Headers */,
 				2CF602B622E3DB9D0041BBFE /* Sources */,
@@ -162,7 +162,7 @@
 			);
 			dependencies = (
 			);
-			name = PopupController;
+			name = JustPopup;
 			productName = PopupController;
 			productReference = 2CF602BA22E3DB9D0041BBFE /* JustPopup.framework */;
 			productType = "com.apple.product-type.framework";
@@ -199,7 +199,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2CF602B922E3DB9D0041BBFE /* PopupController */,
+				2CF602B922E3DB9D0041BBFE /* JustPopup */,
 				2C1C757122ECB05A00D4282A /* JustPopupExamples */,
 			);
 		};
@@ -502,7 +502,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2CF602C222E3DB9D0041BBFE /* Build configuration list for PBXNativeTarget "PopupController" */ = {
+		2CF602C222E3DB9D0041BBFE /* Build configuration list for PBXNativeTarget "JustPopup" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CF602C322E3DB9D0041BBFE /* Debug */,
