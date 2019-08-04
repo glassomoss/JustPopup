@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "JustPopup"
-  spec.version      = "0.0.6"
+  spec.version      = "0.0.7"
   spec.summary      = "A lightweight library used to display custom popups"
   spec.description  = "Show animated popups with just views (either UIKIt and SwiftUI) or view controllers."
   spec.homepage     = "http://github.com/glassomoss/JustPopup"
