@@ -140,11 +140,15 @@ let popup = Popup(someView, fromWindow: someWindow)
 
 ## Installation 🔧
 
+### Swift Package Manager 
+
+It's available via SPM! Isn't that cool? 
+
 ### CocoaPods
 
 [CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects.
 
-To integrate Tactile into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate JustPopup into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 use_frameworks!
