@@ -15,6 +15,8 @@
 		2C1C758122ECB05F00D4282A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1C757F22ECB05F00D4282A /* LaunchScreen.storyboard */; };
 		2C1C758722ECB11500D4282A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1C758622ECB11500D4282A /* MainViewController.swift */; };
 		2C1CB9FE22E8C07800DC649D /* JustPopupPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1CB9FD22E8C07800DC649D /* JustPopupPreferences.swift */; };
+		2C4E663D234CC8A1001189FE /* JustPopup.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF602BA22E3DB9D0041BBFE /* JustPopup.framework */; };
+		2C4E663E234CC8A1001189FE /* JustPopup.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2CF602BA22E3DB9D0041BBFE /* JustPopup.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2CB52B2622E73D0C00CD0E19 /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB52B2522E73D0C00CD0E19 /* Popup.swift */; };
 		2CF602BF22E3DB9D0041BBFE /* JustPopup.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CF602BD22E3DB9D0041BBFE /* JustPopup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2CF602C822E3DDE30041BBFE /* AnyPopupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF602C722E3DDE30041BBFE /* AnyPopupController.swift */; };
@@ -22,6 +24,30 @@
 		2CF602CC22E3DE1A0041BBFE /* PopupSwiftUIAnimatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF602CB22E3DE1A0041BBFE /* PopupSwiftUIAnimatedView.swift */; };
 		2CF602D022E3DEB50041BBFE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF602CF22E3DEB50041BBFE /* Extensions.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2C4E663F234CC8A1001189FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2CF602B122E3DB9D0041BBFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2CF602B922E3DB9D0041BBFE;
+			remoteInfo = JustPopup;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2C4E6641234CC8A1001189FE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2C4E663E234CC8A1001189FE /* JustPopup.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2C1C757222ECB05A00D4282A /* JustPopupExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustPopupExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C4E663D234CC8A1001189FE /* JustPopup.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,12 +112,20 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		2C4E663C234CC8A1001189FE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2CF602B022E3DB9D0041BBFE = {
 			isa = PBXGroup;
 			children = (
 				2CF602BC22E3DB9D0041BBFE /* JustPopup */,
 				2C1C757322ECB05A00D4282A /* JustPopupExamples */,
 				2CF602BB22E3DB9D0041BBFE /* Products */,
+				2C4E663C234CC8A1001189FE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,10 +174,12 @@
 				2C1C756E22ECB05A00D4282A /* Sources */,
 				2C1C756F22ECB05A00D4282A /* Frameworks */,
 				2C1C757022ECB05A00D4282A /* Resources */,
+				2C4E6641234CC8A1001189FE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2C4E6640234CC8A1001189FE /* PBXTargetDependency */,
 			);
 			name = JustPopupExamples;
 			productName = JustPopupExamples;
@@ -251,6 +288,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2C4E6640234CC8A1001189FE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2CF602B922E3DB9D0041BBFE /* JustPopup */;
+			targetProxy = 2C4E663F234CC8A1001189FE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2C1C757F22ECB05F00D4282A /* LaunchScreen.storyboard */ = {

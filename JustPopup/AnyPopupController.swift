@@ -2,9 +2,11 @@
 //  JustPopup.swift
 //  G5
 //
-//  Created by Валерий Акатов on 18.07.2019.
-//  Copyright © 2019 Валерий Акатов. All rights reserved.
+//  Created by Mefodiy Akatov on 18.07.2019.
+//  Copyright © 2019 Mefodiy Akatov. All rights reserved.
 //
+
+#if canImport(UIKit)
 
 import SwiftUI
 import Combine
@@ -225,3 +227,5 @@ public extension AnyPopupController where Self: UIViewController {
     }
 
 }
+
+#endif

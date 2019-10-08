@@ -10,13 +10,10 @@ let package = Package(
             name: "JustPopup",
             targets: ["JustPopup"]),
     ],
+    dependencies: [],
     targets: [
         .target(
             name: "JustPopup",
-            path: "JustPopup"),
-        .target(
-            name: "JustPopupExamples",
-            dependencies: ["JustPopup"],
-            path: "JustPopupExamples")
+            path: "JustPopup")
     ]
 )
